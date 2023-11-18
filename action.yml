@@ -1,0 +1,36 @@
+name: bpc-deploy-cf
+description: This is an action to deploy to Cloud Foundry
+author: Martin Trautwein
+inputs:
+  app-name:
+    description: 'Name of the application'
+    required: true
+  placement-zone:
+    description: 'where to place your app: [IPZ001/EPZ001/IPZ001/EPZ002]'
+    required: true
+  org-name:
+    description: 'Name of the Cloud Foundry organization wher the application will be deployed to'
+    required: true
+  space-name:
+    description: 'Name of the Cloud Foundry space wher the application will be deployed to'
+    required: true
+  app-instances:
+    description: 'Number of application instances that will be started'
+    required: false
+    default: '1'
+outputs:
+  url: # id of output
+    description: 'The url where the deployed aplication can be accessed'
+branding:
+  icon: 'cloud'
+  color: 'blue'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.app-name }}
+    - ${{ inputs.placement-zone }}
+    - ${{ inputs.org-name }}
+    - ${{ inputs.space-name }}
+    - ${{ inputs.num-instances }}
+
