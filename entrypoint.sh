@@ -32,7 +32,7 @@ esac
 
 echo "login to BPC Cloud Foundry"
 echo "placement-zone: ${PLACEMENT_ZONE} organization: ${ORG_NAME} space: ${SPACE_NAME}"
-echo "cf login -a $url -u username -p ***** -o ${ORGANIZATION_NAME} -s ${SPACE_NAME}"
+echo "cf login -a $url -u username -p ***** -o ${INPUT_ORG_NAME} -s ${SPACE_NAME}"
 echo "cf push ${APP_NAME} -i ${APP_INSTANCES} "
 
 time=$(date)
