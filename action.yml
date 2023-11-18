@@ -32,5 +32,5 @@ runs:
     - ${{ inputs.placement-zone }}
     - ${{ inputs.org-name }}
     - ${{ inputs.space-name }}
-    - ${{ inputs.num-instances }}
+    - ${{ inputs.app-instances }}
 
